@@ -71,3 +71,8 @@ export const EachLogoItem = styled.img`
   height: 30px;
   margin: 5px;
 `
+export const ActiveIconSideBar = styled.i`
+  &:hover {
+    color: '#ff0000';
+  }
+`
