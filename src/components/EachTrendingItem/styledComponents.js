@@ -13,6 +13,9 @@ export const EachTrendingItemContainer = styled.li`
     align-items: flex-start;
     width: 100%;
   }
+  @media (min-width: 1200px) {
+    padding-left: 30px;
+  }
 `
 export const EachVideoTrendingImg = styled.img`
   width: 100%;
@@ -26,7 +29,8 @@ export const EachVideoTrendingImg = styled.img`
     align-items: center;
   }
   @media (min-width: 992px) {
-    width: 350px;
+    width: 300px;
+    height: 200px;
   }
 `
 export const EachVideoTrendingDetails = styled.div`
@@ -91,6 +95,7 @@ export const CountTimeContainer = styled.div`
   @media (min-width: 567px) {
     justify-content: flex-start;
     align-items: flex-start;
+    align-self: flex-start;
   }
 `
 export const VideoItem = styled.p`
