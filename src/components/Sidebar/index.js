@@ -17,46 +17,46 @@ import {
   ContactUs,
   LogosContainer,
   EachLogoItem,
-  HeaderEachItemLgActive,
+  ActiveIconSideBar,
 } from './styledComponents'
 
 class Sidebar extends Component {
-  state = {isHome: false, isTrending: false, isGaming: false, isSaved: false}
+  state = {isHome: true, isTrending: false, isGaming: false, isSaved: false}
 
   onClickHome = () => {
-    this.setState(prevState => ({
-      isHome: !prevState.isHome,
+    this.setState({
+      isHome: true,
       isTrending: false,
       isGaming: false,
       isSaved: false,
-    }))
+    })
   }
 
   onClickTrending = () => {
-    this.setState(prevState => ({
+    this.setState({
       isHome: false,
-      isTrending: !prevState.isTrending,
+      isTrending: true,
       isGaming: false,
       isSaved: false,
-    }))
+    })
   }
 
   onClickGaming = () => {
-    this.setState(prevState => ({
+    this.setState({
       isHome: false,
       isTrending: false,
-      isGaming: !prevState.isGaming,
+      isGaming: true,
       isSaved: false,
-    }))
+    })
   }
 
   onClickSave = () => {
-    this.setState(prevState => ({
+    this.setState({
       isHome: false,
       isTrending: false,
       isGaming: false,
-      isSaved: !prevState.isSaved,
-    }))
+      isSaved: true,
+    })
   }
 
   render() {
@@ -69,85 +69,48 @@ class Sidebar extends Component {
             <HomeSidebar dark={isDarkTheme}>
               <HomeUnorderedListLg>
                 <Link to="/" style={{textDecoration: 'none'}}>
-                  {isHome ? (
-                    <HeaderEachItemLgActive
-                      active={isHome}
-                      onClick={this.onClickHome}
-                    >
+                  <HeaderEachItemLg
+                    dark={isDarkTheme}
+                    onClick={this.onClickHome}
+                  >
+                    <ActiveIconSideBar active={isHome}>
                       <MdHome size={30} />
-                      <ItemName dark={isDarkTheme}>Home</ItemName>
-                    </HeaderEachItemLgActive>
-                  ) : (
-                    <HeaderEachItemLg
-                      dark={isDarkTheme}
-                      onClick={this.onClickHome}
-                    >
-                      <MdHome size={30} />
-                      <ItemName dark={isDarkTheme}>Home</ItemName>
-                    </HeaderEachItemLg>
-                  )}
+                    </ActiveIconSideBar>
+                    <ItemName dark={isDarkTheme}>Home</ItemName>
+                  </HeaderEachItemLg>
                 </Link>
                 <Link to="/trending" style={{textDecoration: 'none'}}>
-                  {isTrending ? (
-                    <HeaderEachItemLgActive
-                      dark={isDarkTheme}
-                      onClick={this.onClickTrending}
-                      active={isTrending}
-                    >
-                      <HiFire size={30} fill="#ff0b37" />
-                      <ItemName dark={isDarkTheme}>Trending</ItemName>
-                    </HeaderEachItemLgActive>
-                  ) : (
-                    <HeaderEachItemLg
-                      dark={isDarkTheme}
-                      onClick={this.onClickTrending}
-                      active={isTrending}
-                    >
+                  <HeaderEachItemLg
+                    dark={isDarkTheme}
+                    onClick={this.onClickTrending}
+                  >
+                    <ActiveIconSideBar active={isTrending}>
                       <HiFire size={30} />
-                      <ItemName dark={isDarkTheme}>Trending</ItemName>
-                    </HeaderEachItemLg>
-                  )}
+                    </ActiveIconSideBar>
+                    <ItemName dark={isDarkTheme}>Trending</ItemName>
+                  </HeaderEachItemLg>
                 </Link>
                 <Link to="/gaming" style={{textDecoration: 'none'}}>
-                  {isGaming ? (
-                    <HeaderEachItemLgActive
-                      dark={isDarkTheme}
-                      onClick={this.onClickGaming}
-                    >
-                      <SiYoutubegaming size={30} fill="#ff0b37" />
-                      <ItemName dark={isDarkTheme}>Gaming</ItemName>
-                    </HeaderEachItemLgActive>
-                  ) : (
-                    <HeaderEachItemLg
-                      dark={isDarkTheme}
-                      onClick={this.onClickGaming}
-                      active={isGaming}
-                    >
+                  <HeaderEachItemLg
+                    dark={isDarkTheme}
+                    onClick={this.onClickGaming}
+                  >
+                    <ActiveIconSideBar active={isGaming}>
                       <SiYoutubegaming size={30} />
-                      <ItemName dark={isDarkTheme}>Gaming</ItemName>
-                    </HeaderEachItemLg>
-                  )}
+                    </ActiveIconSideBar>
+                    <ItemName dark={isDarkTheme}>Gaming</ItemName>
+                  </HeaderEachItemLg>
                 </Link>
                 <Link to="/saved-videos" style={{textDecoration: 'none'}}>
-                  {isSaved ? (
-                    <HeaderEachItemLgActive
-                      dark={isDarkTheme}
-                      onClick={this.onClickSave}
-                      active={isSaved}
-                    >
-                      <CgPlayListAdd size={30} fill="#ff0b37" />
-                      <ItemName dark={isDarkTheme}>Saved Videos</ItemName>
-                    </HeaderEachItemLgActive>
-                  ) : (
-                    <HeaderEachItemLg
-                      dark={isDarkTheme}
-                      onClick={this.onClickSave}
-                      active={isSaved}
-                    >
-                      <CgPlayListAdd size={30} fill="#ff0b37" />
-                      <ItemName dark={isDarkTheme}>Saved Videos</ItemName>
-                    </HeaderEachItemLg>
-                  )}
+                  <HeaderEachItemLg
+                    dark={isDarkTheme}
+                    onClick={this.onClickSave}
+                  >
+                    <ActiveIconSideBar active={isSaved}>
+                      <CgPlayListAdd size={30} />
+                    </ActiveIconSideBar>
+                    <ItemName dark={isDarkTheme}>Saved Videos</ItemName>
+                  </HeaderEachItemLg>
                 </Link>
               </HomeUnorderedListLg>
               <ContactUsContainer>
